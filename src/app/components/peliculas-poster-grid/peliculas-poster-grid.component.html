@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-3 mb-5 animate__animated animate__fadeIn" *ngFor="let movie of data">
+        <img [src]="movie.poster_path | poster" class="img-fluid poster" (click)="mostrarPelicula(movie)">
+        <div>
+            <h3>{{movie.title}}</h3>
+            <div class="row">
+                <div class="col-10 text-white">
+                    <i class="fa fa-star" *ngIf="movie.vote_average >= 1"></i>
+                    <i class="fa fa-star" *ngIf="movie.vote_average >= 2"></i>
+                    <i class="fa fa-star" *ngIf="movie.vote_average >= 3"></i>
+                    <i class="fa fa-star" *ngIf="movie.vote_average >= 4"></i>
+                    <i class="fa fa-star" *ngIf="movie.vote_average >= 5"></i>
+                    <i class="fa fa-star" *ngIf="movie.vote_average >= 6"></i>
+                    <i class="fa fa-star" *ngIf="movie.vote_average >= 7"></i>
+                    <i class="fa fa-star" *ngIf="movie.vote_average >= 8"></i>
+                    <i class="fa fa-star" *ngIf="movie.vote_average >= 9"></i>
+
+                </div>
+                <div class="col-2 text-white">
+                    {{movie.vote_average | number:'1.1-2'}}
+                </div>
+                Movie - Películas
+            </div>
+        </div>
+    </div>
+</div>
